@@ -1,3 +1,7 @@
+<% if @pair.user1reveal == true && @pair.user2reveal == true %>
+  <%= @user.email %>
+<% end %>        
+  
 <% if @pair.user1 == current_user.id %>
   <% if @pair.user1reveal != true %>
     <%= form_tag reveal_path(@pair), class: "form-signin", method: 'patch' do %>
