@@ -11,7 +11,11 @@
 
   <tbody>
 
-    <%= button_to 'new pairing', admins_path  %>
+    <%= button_to 'new pairings', admins_path  %>
+    <br>
+    <br>
+    <%= button_to 'end pairings', {controller: 'admins', action: 'end_pairings'}  %>
+
 
   </tbody>
 </table>
