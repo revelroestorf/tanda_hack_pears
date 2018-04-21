@@ -1,14 +1,46 @@
-<%= form_tag reveal_path, class: "form-signin", method: 'patch' do %>
-  <%= hidden_field_tag :reveal, '' %>
-  <%= hidden_field_tag :pairing_id, @pairings.id %>
-  
-  <%= check_box_tag :reveal, checked = true %> Reveal yourself?</br></br>
- <div>
-  </br>
-  <%= submit_tag "Submit", class:"btn btn-large btn-success" %>
- </div>
- <% end %>
+<% if @pair.user1 == current_user.id %>
+  <% if @pair.user1reveal != true %>
+    <%= form_tag reveal_path(@pair), class: "form-signin", method: 'patch' do %>
+      <%= hidden_field_tag :reveal, true %>
+      <%= hidden_field_tag :pair_id, @pair.id %>
+    <div>
+      </br>
+      <%= submit_tag "Display Name", class:"btn btn-large btn-success" %>
+    </div>
+  <% end %>
+  <% else %>
+    <%= form_tag reveal_path(@pair), class: "form-signin", method: 'patch' do %>
+      <%= hidden_field_tag :reveal, false %>
+      <%= hidden_field_tag :pair_id, @pair.id %>
+    <div>
+      </br>
+      <%= submit_tag "Remove Name", class:"btn btn-large btn-danger" %>
+    </div>
+    <% end %>
+  <% end %>
+<% end %>
 
+<% if @pair.user2 == current_user.id %>
+  <% if @pair.user1reveal != true %>
+    <%= form_tag reveal_path(@pair), class: "form-signin", method: 'patch' do %>
+      <%= hidden_field_tag :reveal, true %>
+      <%= hidden_field_tag :pair_id, @pair.id %>
+    <div>
+      </br>
+      <%= submit_tag "Display Name", class:"btn btn-large btn-success" %>
+    </div>
+  <% end %>
+  <% else %>
+    <%= form_tag reveal_path(@pair), class: "form-signin", method: 'patch' do %>
+      <%= hidden_field_tag :reveal, false %>
+      <%= hidden_field_tag :pair_id, @pair.id %>
+    <div>
+      </br>
+      <%= submit_tag "Remove Name", class:"btn btn-large btn-danger" %>
+    </div>
+    <% end %>
+<% end %>
+<% end %>
 
 <div class="row">
   <div class="col-md-9">
