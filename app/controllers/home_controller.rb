@@ -9,7 +9,8 @@ class HomeController < ApplicationController
     
     @pair.user1 != current_user.id ? chat_partner_id = @pair.user1 : chat_partner_id = @pair.user2
     
-    @user = User.find(chat_partner_id)
+    @pair ? @user = User.find(chat_partner_id) : @user = User.first 
+    
 
      
     @conversations = Conversation.includes(:recipient, :messages)
