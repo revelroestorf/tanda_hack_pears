@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :admins
 
   get ':controller(/:action)'
+<<<<<<< HEAD
 
   post 'admins/end_pairings'
 
+=======
+>>>>>>> 93c25201cc3dbf9384b51de0e137e4197ac1322e
   devise_for :users
   resources :reveal
 

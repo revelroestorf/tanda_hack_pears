@@ -1,5 +1,16 @@
+<style>
+body {background-color: white;}
+h1   {color: blue;}
+p    {color: red;}
+div {padding: 2em}
+</style>
+
+
+
+
+
 <% if @pair.user1reveal == true && @pair.user2reveal == true %>
-  <%= @user.email %>
+  <%= @user.name %>
 <% end %>        
   
 <% if @pair.user1 == current_user.id %>
@@ -9,7 +20,7 @@
       <%= hidden_field_tag :pair_id, @pair.id %>
     <div>
       </br>
-      <%= submit_tag "Display Name", class:"btn btn-large btn-success" %>
+      <%= submit_tag "Reveal Name", class:"btn btn-success btn-lg" %>
     </div>
   <% end %>
   <% else %>
@@ -18,7 +29,7 @@
       <%= hidden_field_tag :pair_id, @pair.id %>
     <div>
       </br>
-      <%= submit_tag "Remove Name", class:"btn btn-large btn-danger" %>
+      <%= submit_tag "Hide Name", class:"btn btn-danger btn-lg" %>
     </div>
     <% end %>
   <% end %>
@@ -31,7 +42,7 @@
       <%= hidden_field_tag :pair_id, @pair.id %>
     <div>
       </br>
-      <%= submit_tag "Display Name", class:"btn btn-large btn-success" %>
+      <%= submit_tag "Reveal Name", class:"btn btn-success btn-lg" %>
     </div>
   <% end %>
   <% else %>
@@ -40,7 +51,7 @@
       <%= hidden_field_tag :pair_id, @pair.id %>
     <div>
       </br>
-      <%= submit_tag "Remove Name", class:"btn btn-large btn-danger" %>
+      <%= submit_tag "Hide Name", class:"btn btn-danger btn-lg" %>
     </div>
     <% end %>
 <% end %>
@@ -70,3 +81,4 @@
     </div>
   </div>
 </div>
+
