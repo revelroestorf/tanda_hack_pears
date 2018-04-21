@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<% Pairing.all.each do |pair| %>
+  <%= pair %>
+<% end %>
+
+<%= link_to 'Delete Pairings', {controller: 'admins', action: 'destroy'}, method: 'delete' %>

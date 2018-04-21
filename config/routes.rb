@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+
   root 'home#index'
+
+  resources :admins
+
+  get ':controller(/:action)'
+
+
 
   devise_for :users
 
