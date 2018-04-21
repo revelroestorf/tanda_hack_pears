@@ -1,5 +1,6 @@
-<% if @pair.user1reveal == true && @pair.user2reveal == true %>
-  <%= @user.email %>
+
+<% if @pair.user1reveal == true && @pair.user2reveal == true && @pair.admin_reveal = true %>
+  <%= @user.name %>
 <% end %>        
   
 <% if @pair.user1 == current_user.id %>
@@ -63,10 +64,13 @@
       <div class="panel-body">
         <ul>
           
-            <li><%= link_to "jimmyboy", conversations_path(user_id: @user), remote: true, method: :post %></li>
+            <li><%= link_to "Your Pear", conversations_path(user_id: @user), remote: true, method: :post %></li>
           
         </ul>
       </div>
     </div>
   </div>
 </div>
+<script>
+  alert("<%= @icebreaker %>")
+</script>
