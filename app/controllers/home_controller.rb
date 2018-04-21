@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     # chat_pair_id = pair.user1 if pair.user1 != current_user.id
     # chat_pair_id = pair.user2 if pair.user2 != current_user.id
     
-    pair.user1 != current_user.id ? chat_partner_id = pair.user1 : chat_partner_id = pair.user2
+    @pair.user1 != current_user.id ? chat_partner_id = @pair.user1 : chat_partner_id = @pair.user2
     
     @user = User.find(chat_partner_id)
 
