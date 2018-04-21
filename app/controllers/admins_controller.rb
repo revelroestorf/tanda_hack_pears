@@ -3,7 +3,11 @@ class AdminsController < ApplicationController
   def index
   end
 
-  def pairing
+  def end_pairings
+    Pairing.all.each do |pair|
+      pair.update(admin_reveal: true)
+    flash.now[:notice] = "Pairings ended for reveal"
+    end
   end
 
   def create
@@ -40,7 +44,7 @@ class AdminsController < ApplicationController
       count += 1
     end
 
-    flash[:notice] = "Pairings complete"
+    flash[:notice] = "Pairings created"
 
   end
 

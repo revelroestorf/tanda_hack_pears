@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get ':controller(/:action)'
 
+  post 'admins/end_pairings'
+
   devise_for :users
   resources :reveal
 

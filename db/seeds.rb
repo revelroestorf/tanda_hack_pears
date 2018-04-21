@@ -5,6 +5,7 @@ password = 'pass123'
     password: password,
     password_confirmation: password
   )
+  
 end
 
   User.find(1).update(name: "Sammy D")
