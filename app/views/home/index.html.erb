@@ -1,3 +1,4 @@
+
 <style>
 body {background-color: white;}
 h1   {color: blue;}
@@ -5,11 +6,7 @@ p    {color: red;}
 div {padding: 2em}
 </style>
 
-
-
-
-
-<% if @pair.user1reveal == true && @pair.user2reveal == true %>
+<% if @pair.user1reveal == true && @pair.user2reveal == true && @pair.admin_reveal = true %>
   <%= @user.name %>
 <% end %>        
   
@@ -74,11 +71,17 @@ div {padding: 2em}
       <div class="panel-body">
         <ul>
           
-            <li><%= link_to "jimmyboy", conversations_path(user_id: @user), remote: true, method: :post %></li>
+            <li><%= link_to "Your Pear", conversations_path(user_id: @user), remote: true, method: :post %></li>
           
         </ul>
       </div>
     </div>
   </div>
 </div>
+<<<<<<< HEAD
+<script>
+  alert("<%= @icebreaker %>")
+</script>
+=======
 
+>>>>>>> 93c25201cc3dbf9384b51de0e137e4197ac1322e
