@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chat</title>
+    <title>Pears</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
     <div class="container">
-      <%= yield %>
+        <% if user_signed_in? %>
+        <p>Logged in as: <%=current_user.email%></p>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <%end%> 
+        <%= yield %>
     </div>
   </body>
 </html>
