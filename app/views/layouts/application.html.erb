@@ -6,12 +6,14 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> 
+    <link rel="shortcut icon" href="https://www.iconfinder.com/icons/2882691/food_fruit_pear_icon" type="image/x-icon">
   </head>
+  
   <body>
     <div class="container">
         <% if user_signed_in? %>
-        <p>Logged in as: <%=current_user.email%></p>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <p>Logged in as: <%=current_user.name%></p>
+        <%= link_to('Logout', destroy_user_session_path, class:"btn btn-primary btn-lg",method: :delete) %>
         <%end%> 
         <%= yield %>
     </div>
