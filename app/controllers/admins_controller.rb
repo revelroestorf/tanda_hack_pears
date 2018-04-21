@@ -13,6 +13,7 @@ class AdminsController < ApplicationController
     @users.each do |user|
       user_ids.push(user.id)
     end
+    user_ids.shuffle!
 
     number_of_pairs = @users.count/2
 
