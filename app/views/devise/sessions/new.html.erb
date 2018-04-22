@@ -1,20 +1,28 @@
+<style>
+body {background-color: white}
+h1   {color: blue;}
+p    {color: red;}
+div {padding: 2em}
+img {float: right}
+</style>
+
 <h2>Log in</h2>
 
 <%= image_tag("https://pbs.twimg.com/profile_images/586544175488704513/liiDqbCh_400x400.jpg") %>
 
-<%= form_for(resource, class: 'loginForm', as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-control-plaintext">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, class: '',autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, class: '', autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
+    <div class="form-group">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>

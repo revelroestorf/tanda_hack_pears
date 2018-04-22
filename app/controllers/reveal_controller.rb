@@ -3,7 +3,7 @@ class RevealController < ApplicationController
   def update
     @pairing = Pairing.find(params[:id])
     user_reveal = params[:reveal]
-    @pairing.update(user1reveal: user_reveal)
+    #@pairing.update(user1reveal: user_reveal)
 
     if @pairing.user1 == current_user.id
       @pairing.update(user1reveal: user_reveal)

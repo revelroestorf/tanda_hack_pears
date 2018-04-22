@@ -11,9 +11,9 @@
 <% Pairing.all.each do |pair| %>
 
 <tr>
-  <td><%= User.find(pair.user1).name %></td>
+  <td><%= User.find(pair.user1).email %></td>
   <td> - </td>
-  <td><%= User.find(pair.user2).name %></td>
+  <td><%= User.find(pair.user2).email %></td>
 </tr>
 <% end %>
 

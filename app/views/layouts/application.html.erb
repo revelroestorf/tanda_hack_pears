@@ -13,7 +13,7 @@
     <div class="container">
         <% if user_signed_in? %>
         <p>Logged in as: <%=current_user.name%></p>
-        <%= link_to('Logout', destroy_user_session_path, class:"btn btn-primary btn-lg",method: :delete) %>
+        <%= link_to('Logout', destroy_user_session_path, class:"btn btn-light btn-lg",method: :delete) %>
         <%end%> 
         <%= yield %>
     </div>

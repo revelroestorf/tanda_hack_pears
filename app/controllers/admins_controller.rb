@@ -43,7 +43,7 @@ class AdminsController < ApplicationController
       Pairing.create(user1: user1_ids[count], user2: user2_ids[count])
       count += 1
     end
-
+    Pairing.all.update(user1reveal: false, user2reveal: false, admin_reveal: false)
     flash[:notice] = "Pairings created"
 
   end
